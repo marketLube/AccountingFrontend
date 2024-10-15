@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import BranchesSelector from "../../../../Components/Buttons/BranchesSelector";
 import { resetDayBook } from "../../../../Services/useDayBookActions";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
@@ -21,8 +20,15 @@ import {
 } from "../../../../Global-Variables/features/BranchWisePnlSlice/branchWIsePnlSlice";
 import { fetchBankDetails } from "../../../../Global-Variables/fetch/details";
 import { fetchDashboardData } from "../../../../Global-Variables/features/dashBoardSlice/dashBoardSlice";
-import { getInitialTime } from "../../../../Components/Coundown/countdownActions";
-import { setTime } from "../../../../Global-Variables/features/auth/authSlice";
+import { validateBranches } from "../../../../Components/Form/HelperFunctions";
+import {
+  Bank,
+  BranchComponent,
+  DateSel,
+  Purpose,
+  Radio,
+  Remark,
+} from "../../../../Components/Form/Components/Purpose";
 
 const DaybookForm = () => {
   const dispatch = useDispatch();
@@ -32,6 +38,7 @@ const DaybookForm = () => {
   const [catagory, setCatagory] = useState("");
   const [particular, setParticular] = useState("");
   const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -49,36 +56,13 @@ const DaybookForm = () => {
       purpose: "",
     },
   });
-  const b = combineDateWithCurrentTime(new Date());
-  const toggleBranch = (branch) => {
-    setSelectedBranches((prev) =>
-      prev.includes(branch)
-        ? prev.filter((b) => b !== branch)
-        : [...prev, branch]
-    );
-
-    if (selectedBranches.length === 0) {
-      clearErrors("branches");
-    }
-  };
-
-  const validateBranches = () => {
-    if (selectedBranches.length === 0) {
-      setError("branches", {
-        type: "manual",
-        message: "At least one branch must be selected",
-      });
-      return false;
-    }
-    return true;
-  };
 
   const onSubmit = async (data) => {
-    if (!validateBranches()) return;
+    if (!validateBranches(selectedBranches.length, setError)) return;
 
     // Building the branches array
     const branches = selectedBranches.map((branch) => ({
-      branchName: branch,
+      branchName: branch.trim(),
       amount: data[`amount_${branch}`],
     }));
 
@@ -107,7 +91,6 @@ const DaybookForm = () => {
       catagory: catagory,
       particular: curPart._id,
     };
-
     // Here you would typically send the formData to your backend using an API call.
     await handleCreateTransaction(formData);
   };
@@ -119,8 +102,9 @@ const DaybookForm = () => {
 
   const handleCreateTransaction = async (formData) => {
     setLoading(true);
+
     try {
-      await create_daybook(formData);
+      const res = await create_daybook(formData);
       await create_log(
         `${combineDateWithCurrentTime(new Date())} ${user.name} created a ${
           formData.type
@@ -129,6 +113,7 @@ const DaybookForm = () => {
         } bank for ${particular} with purpose of ${formData.purpose}`,
         user._id
       );
+
       reset();
       dispatch(fetchBalanceSheet());
       dispatch(fetchBranchTransaction());
@@ -160,7 +145,6 @@ const DaybookForm = () => {
       });
     } finally {
       setLoading(false);
-      dispatch(setTime(getInitialTime()));
     }
   };
 
@@ -174,159 +158,23 @@ const DaybookForm = () => {
         />
         <div className="form-section">
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="purpose">Purpose</label>
-              <input
-                type="text"
-                id="purpose"
-                {...register("purpose", {
-                  required: "Purpose is required",
-                })}
-              />
-              {errors.purpose && (
-                <span className="form-group-error">
-                  {errors.purpose.message}
-                </span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="remark">Remark</label>
-              <textarea
-                id="remark"
-                {...register("remark", { required: "Remark is required" })}
-              ></textarea>
-              {errors.remark && (
-                <span className="form-group-error">
-                  {errors.remark.message}
-                </span>
-              )}
-            </div>
+            <Purpose register={register} errors={errors} />
+            <Remark register={register} errors={errors} />
           </div>
 
           <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="bank">Bank</label>
-              <select
-                id="bank"
-                {...register("bank", { required: "Bank is required" })}
-              >
-                <option value="">Select Bank</option>
-                <option value="HDFC">HDFC</option>
-                <option value="RAK">RAK</option>
-                <option value="ICICI">ICICI</option>
-                <option value="RBL">RBL</option>
-                <option value="CASH">CASH</option>
-              </select>
-              {errors.bank && (
-                <span className="form-group-error">{errors.bank.message}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="Type">Type</label>
-              <div className="type-options">
-                <label className="type-option">
-                  <input
-                    type="radio"
-                    value="Debit"
-                    {...register("type", {
-                      required: "Select a type",
-                    })}
-                  />
-                  Debited
-                </label>
-                <label className="type-option">
-                  <input
-                    type="radio"
-                    value="Credit"
-                    {...register("type", {
-                      required: "Select a type",
-                    })}
-                  />
-                  Credited
-                </label>
-              </div>
-              {errors.type && (
-                <span className="form-group-error">{errors.type.message}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="date">Date</label>
-              <input
-                type="date"
-                id="date"
-                max={new Date().toISOString().split("T")[0]}
-                {...register("date", { required: "Date is required" })}
-              />
-              {errors.date && (
-                <span className="form-group-error">{errors.date.message}</span>
-              )}
-            </div>
+            <Bank register={register} errors={errors} />
+            <Radio register={register} errors={errors} />
+            <DateSel register={register} errors={errors} />
           </div>
         </div>
-
-        <div className="form-section">
-          <div className="form-row">
-            <div className="form-group">
-              <div htmlFor="Branches" className="branch-label">
-                Branches
-              </div>
-              <div className="branch-group">
-                {[
-                  "Kochi",
-                  "Kozhikode",
-                  "Kottayam",
-                  "Manjeri",
-                  "Kannur",
-                  "Corporate",
-                  "Directors",
-                ].map((branch) => (
-                  <BranchesSelector
-                    key={branch}
-                    isActive={selectedBranches.includes(branch)}
-                    onClick={() => toggleBranch(branch)}
-                  >
-                    {branch}
-                  </BranchesSelector>
-                ))}
-              </div>
-            </div>
-          </div>
-          {errors.branches && (
-            <span className="form-group-error">{errors.branches.message}</span>
-          )}
-          <div className="form-section">
-            {selectedBranches.length > 0 && (
-              <>
-                <h5>Selected Branches and Amounts</h5>
-                <div className="grid-container">
-                  {selectedBranches.map((branch) => (
-                    <div key={branch} className="grid-item">
-                      <label htmlFor={`amount_${branch}`}>{branch}</label>
-                      <div className="amount-field ">
-                        <input
-                          type="number"
-                          id={`amount_${branch}`}
-                          {...register(`amount_${branch}`, {
-                            required: "Amount is required",
-                            min: {
-                              value: 0,
-                              message: "Amount must be positive",
-                            },
-                          })}
-                        />
-                      </div>
-                      {errors[`amount_${branch}`] && (
-                        <span className="form-group-error">
-                          {errors[`amount_${branch}`].message}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </div>
+        <BranchComponent
+          setSelectedBranches={setSelectedBranches}
+          clearErrors={clearErrors}
+          selectedBranches={selectedBranches}
+          errors={errors}
+          register={register}
+        />
 
         <div className="form-btn-group form-submit-btns">
           <button
@@ -342,7 +190,7 @@ const DaybookForm = () => {
             className={`btn primary-blue-btn form-submit`}
             disabled={loading}
           >
-            {loading ? "Submitting..." : "Submit"}{" "}
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>

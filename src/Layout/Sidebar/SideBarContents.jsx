@@ -1,9 +1,8 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import HomeIcon, {
   BalanceSheetIcon,
   BranchPnlIcon,
   BudgetPlannerIcon,
-  CommitionIcon,
   DaybookIcon,
   LiabilityIcon,
   OutStandingIcon,
@@ -70,12 +69,6 @@ function SideBarContents() {
         <li>
           <BudgetPlannerIcon size={iconSize} className="nav-icons" />
           <span>Budget Planner</span>
-        </li>
-      </NavLink>
-      <NavLink to="/commition">
-        <li>
-          <CommitionIcon size={iconSize} className="nav-icons" />
-          <span>Commission</span>
         </li>
       </NavLink>
     </ul>

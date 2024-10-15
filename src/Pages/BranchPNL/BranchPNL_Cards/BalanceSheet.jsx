@@ -6,11 +6,12 @@ const BalanceSheet = ({ title, balances }) => {
   const { loading, error } = useSelector((state) => state.bank);
 
   const balanceCardclassNamees = {
-    RBL: "balance-name-rbl",
-    ICICI: "balance-name-icici",
-    RAK: "balance-name-rak",
-    HDFC: "balance-name-hdfc",
-    CASH: "balance-name-cash",
+    "Web Lube": "balance-name-rbl",
+    Fidal: "balance-name-icici",
+    Althameem: "balance-name-rak",
+    Axis: "balance-name-hdfc",
+    Cash: "balance-name-cash",
+    Others: "balance-name-bandan",
   };
 
   const sortedOrder = Object.keys(balanceCardclassNamees);
@@ -48,12 +49,14 @@ const BalanceSheet = ({ title, balances }) => {
               <div className="balance_card">
                 <div
                   className={`balance-name ${
-                    balanceCardclassNamees[balance.name]
+                    balanceCardclassNamees[balance?.name]
                   }`}
                 >
-                  {balance.name}
+                  {balance?.name}
                 </div>
-                <div className="balance-amount">{balance.balance}</div>
+                <div className="balance-amount">
+                  {balance?.balance?.toFixed(2)}
+                </div>
               </div>
               <div className="underline-balance"></div>
             </React.Fragment>

@@ -12,9 +12,19 @@ export const login = createAsyncThunk(
         withCredentials: true,
       });
 
-      return response.data;
+      return response?.data?.envelop?.currentUser;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error?.response?.data?.message);
+      if (error.response) {
+        if (error.response.status === 429) {
+          return thunkAPI.rejectWithValue(
+            "Too many requests. Please try again later."
+          );
+        } else {
+          return thunkAPI.rejectWithValue(error?.response?.data?.message);
+        }
+      } else {
+        return thunkAPI.rejectWithValue("Check you email or password");
+      }
     }
   }
 );
@@ -25,12 +35,10 @@ export const fetchLogs = createAsyncThunk(
     try {
       const response = await axios.get(
         `${URL}/v1/logs?user=${userId}&limit=500`,
-        {},
         { withCredentials: true }
       );
       return response.data.docs;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error?.response?.data?.message);
     }
   }
@@ -41,6 +49,7 @@ const initialState = {
   loading: false,
   error: null,
   user: null,
+  email: null,
   isNewPassword: false,
   logs: [],
   logsLoading: false,
@@ -60,7 +69,8 @@ const authSlice = createSlice({
       state.isLoggedIn = action.payload;
     },
     setUser(state, action) {
-      state.user = action.payload;
+      state.user = action.payload?.name;
+      state.email = action.payload?.email;
     },
     setIsNewPassword(state, action) {
       state.isNewPassword = action.payload;
@@ -72,10 +82,12 @@ const authSlice = createSlice({
         state.loading = true;
         state.error = null; // Clear any previous errors
       })
-      .addCase(login.fulfilled, (state) => {
+      .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
-        state.isLoggedIn = true; // Assuming the login was successful
-        state.error = null; // Clear error on success
+        state.user = action.payload?.name;
+        state.email = action.payload?.email;
+        state.isLoggedIn = true;
+        state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = false;

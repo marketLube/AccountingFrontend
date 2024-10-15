@@ -34,7 +34,7 @@ const RemindersTable = ({ data, currentPage }) => {
         ) : error ? (
           <div>
             <div className="no-data-4pack">
-              <div className="error-for-table">{error}</div>
+              <div className="error-for-table">Netword Error</div>
             </div>
           </div>
         ) : data.length === 0 ? (

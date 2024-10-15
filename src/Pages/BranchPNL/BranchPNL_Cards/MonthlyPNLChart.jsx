@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const MonthlyPNLChart = ({ labels, datasets, stepSize = 200000 }) => {
+const MonthlyPNLChart = ({ labels, datasets, stepSize = 100000 }) => {
   // Find the maximum value from the datasets
   const maxValue = Math.max(...datasets.flatMap((dataset) => dataset.data));
 

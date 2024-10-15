@@ -5,21 +5,32 @@ import TopPerformer from "./TopPerformer";
 import TotalExpense from "./TotalExpense";
 import TotalIncome from "./TotalIncome";
 import GraphSkelton from "../../Components/GraphSkelton";
+import { branches } from "../../data/generalDatas";
 
-const labels = [
-  "Kannur",
-  "Manjeri",
-  "Kochi",
-  "Kottayam",
-  "Calicut",
-  "Directors",
-  "Corporate",
+const labels = branches.slice(1);
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 function Overview() {
   const { incomeArr, expenseArr, loading, error } = useSelector(
     (state) => state.dashboard
   );
+
+  const month = new Date().getMonth();
+  const currentMonth = monthNames[month];
 
   const max = Math.max(1000, ...(incomeArr || []), ...(expenseArr || []));
 
@@ -61,7 +72,7 @@ function Overview() {
           <GraphSkelton />
         ) : (
           <>
-            <span className="graph-head">August Branch wise PNL</span>
+            <span className="graph-head">{currentMonth} Branch wise PNL</span>
             <div className="chart-wrapper">
               <MonthlyPNLChart labels={labels} datasets={datasets} max={max} />
             </div>

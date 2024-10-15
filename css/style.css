@@ -36,7 +36,7 @@ ul {
 }
 
 .title-blue-span {
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   font-family: "inter", "Open Sans", "Poppins", sans-serif;
   margin-left: 8rem;
   font-weight: 500;
@@ -113,13 +113,13 @@ a {
 }
 
 .active li {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white !important;
   font-weight: 700;
 }
 
 .active span {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white !important;
   font-weight: 700;
   border-radius: 10px;
@@ -177,7 +177,7 @@ a {
 }
 
 .arrow-down-btn {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   transform: rotate(270deg);
 }
 
@@ -269,7 +269,7 @@ ul {
 }
 
 .title-blue-span {
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   font-family: "inter", "Open Sans", "Poppins", sans-serif;
   margin-left: 8rem;
   font-weight: 500;
@@ -935,8 +935,10 @@ ul {
 }
 .daybook-form .form-section .form-row .form-group .type-options {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 4rem;
-  width: 20%;
+  width: 100%;
   padding-bottom: 0.4rem;
   padding-top: 0.8rem;
 }
@@ -1200,13 +1202,13 @@ ul {
   gap: 1rem;
 }
 .liability_body .btn-design {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
   width: 16rem;
   text-align: center;
 }
 .liability_body .btn2-design {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
 }
 
@@ -1283,13 +1285,13 @@ ul {
   gap: 1rem;
 }
 .branchwise_body .btn-design {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
   width: 16rem;
   text-align: center;
 }
 .branchwise_body .btn2-design {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
 }
 
@@ -1429,7 +1431,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding-top: 1.4rem;
-  width: 20rem;
+  width: 25rem;
 }
 .balance_card .balance-name {
   font-weight: 500;
@@ -1437,7 +1439,7 @@ ul {
   border-radius: 5px;
   color: white;
   font-size: 14px;
-  width: 7rem;
+  width: 10rem;
 }
 .balance_card .balance-amount {
   font-weight: 500;
@@ -1801,7 +1803,7 @@ ul {
 .bp-table-card td .bp-table-icon {
   width: 30px;
   height: 30px;
-  background: linear-gradient(to bottom, white, rgb(1, 36, 196));
+  background: linear-gradient(to bottom, white, rgb(39, 1, 100));
   border-radius: 2px;
   margin-right: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1876,7 +1878,7 @@ ul {
   align-items: center;
 }
 .bp-table-card .bp-btn-property {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
 }
 .bp-table-card .bp-dropdown-container {
@@ -1911,7 +1913,7 @@ ul {
   pointer-events: none;
 }
 .bp-table-card .bp-select:focus {
-  border: 1px solid rgb(1, 36, 196);
+  border: 1px solid rgb(39, 1, 100);
   outline: none;
 }
 .bp-table-card .bp-td-tag {
@@ -2033,7 +2035,7 @@ ul {
   width: 20%;
 }
 .bp-table-card .delete-action {
-  text-align: center;
+  text-align: center !important;
 }
 
 .property-form {
@@ -2104,7 +2106,7 @@ ul {
 }
 .property-form .budget-form-group input:focus,
 .property-form .budget-form-group select:focus {
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   outline: none;
 }
 .property-form .property-fields {
@@ -2114,10 +2116,10 @@ ul {
 .property-form .property-fields .budget-form-group {
   flex: 1;
 }
-.property-form button[type=submit] {
+.property-form button[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -2125,7 +2127,7 @@ ul {
   font-weight: 600;
   cursor: pointer;
 }
-.property-form button[type=submit]:disabled {
+.property-form button[type="submit"]:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -2382,7 +2384,7 @@ ul {
   border-radius: 5px;
   color: #ffffff;
   font-size: 14px;
-  width: 7rem;
+  width: 10rem;
 }
 .balance-container .balance-item .balance-amount {
   font-weight: 500;
@@ -2408,6 +2410,9 @@ ul {
   background-color: #484848;
 }
 .balance-container .balance-name-cash {
+  background-color: black;
+}
+.balance-container .balance-name-bandan {
   background-color: black;
 }
 
@@ -2672,7 +2677,11 @@ ul {
 }
 
 .screen {
-  background: linear-gradient(90deg, #adabd7, #3928c0); /* Updated background gradient */
+  background: linear-gradient(
+    90deg,
+    #adabd7,
+    #3928c0
+  ); /* Updated background gradient */
   position: relative;
   height: 600px;
   width: 360px;
@@ -2752,7 +2761,9 @@ ul {
   width: 75%;
   transition: 0.2s;
 }
-.login__field .login__input:active, .login__field .login__input:focus, .login__field .login__input:hover {
+.login__field .login__input:active,
+.login__field .login__input:focus,
+.login__field .login__input:hover {
   outline: none;
   border-bottom-color: #3b34c1;
 }
@@ -2773,7 +2784,9 @@ ul {
   cursor: pointer;
   transition: 0.2s;
 }
-.login__submit:active, .login__submit:focus, .login__submit:hover {
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
   border-color: #29238e;
   outline: none;
 }
@@ -2795,7 +2808,7 @@ ul {
   padding: 0.6rem 1rem;
   font-weight: 500;
   color: #ffffff;
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
 }
 
 .notify-btn {
@@ -2826,7 +2839,7 @@ ul {
   right: 0;
   bottom: 0;
   border-radius: 5px;
-  border: 1px solid rgb(1, 36, 196); /* Use the primary color for the border */
+  border: 1px solid rgb(39, 1, 100); /* Use the primary color for the border */
   pointer-events: none; /* Allow clicks to pass through */
   box-sizing: border-box; /* Ensure proper sizing */
   z-index: 1; /* Place it behind the text */
@@ -2908,9 +2921,9 @@ ul {
   justify-content: center; /* Center content */
   padding: 8px 15px; /* Add padding for a better click area */
   background-color: #ffffff; /* Button background color */
-  color: rgb(1, 36, 196); /* Text color */
+  color: rgb(39, 1, 100); /* Text color */
   border-radius: 5px; /* Rounded corners */
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   border: 1px;
   font-size: 16px; /* Font size for the button text */
   cursor: pointer; /* Change cursor to pointer on hover */
@@ -2947,9 +2960,9 @@ ul {
   padding-left: 2rem;
   padding-right: 2rem;
   border-radius: 7px;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   font-weight: 720;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   border-width: 1px;
   background-color: #ffffff;
 }
@@ -3004,9 +3017,9 @@ ul {
   padding-left: 2rem;
   padding-right: 2rem;
   border-radius: 7px;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   font-weight: 720;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   border-width: 1px;
   background-color: #ffffff;
   display: flex;
@@ -3026,12 +3039,12 @@ ul {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: none;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   border-radius: 7px;
   padding: 0.8rem;
   font-size: 1.4rem;
   font-weight: 500;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   width: 100%;
   cursor: pointer;
   letter-spacing: 0.5px;
@@ -3046,7 +3059,7 @@ ul {
   font-size: 1.8rem;
 }
 .styled-button:focus {
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   outline: none;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -3087,12 +3100,12 @@ ul {
 }
 
 .styled-button:focus {
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   outline: none;
 }
 
 .styled-button.active {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: white;
 }
 
@@ -3200,7 +3213,8 @@ ul {
   height: 4rem;
   transition: transform 0.3s ease;
 }
-.search:active, .search:focus {
+.search:active,
+.search:focus {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -3217,7 +3231,7 @@ ul {
   width: 100%;
   padding: 8px 12px;
   font-size: 16px;
-  border: 1px solid rgb(1, 36, 196);
+  border: 1px solid rgb(39, 1, 100);
   border-radius: 4px;
   appearance: none;
   cursor: pointer;
@@ -3226,8 +3240,8 @@ ul {
 }
 
 .selector__wrapper select:focus {
-  border-color: rgb(1, 36, 196);
-  box-shadow: 0 0 5px rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
+  box-shadow: 0 0 5px rgb(39, 1, 100);
 }
 
 .selector__wrapper::after {
@@ -3275,9 +3289,9 @@ ul {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-radius: 7px;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   font-weight: 720;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   border-width: 1px;
   background-color: #ffffff;
 }
@@ -3295,13 +3309,13 @@ ul {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: none;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   border-radius: 7px;
   padding: 0.8rem;
   padding-left: 2rem;
   font-size: 1.4rem;
   font-weight: 500;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   width: 100%;
   cursor: pointer;
   letter-spacing: 0.5px;
@@ -3317,19 +3331,19 @@ ul {
   transform: translateY(-50%);
   pointer-events: none;
   font-size: 2rem;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
 }
 
 /* Option Styles (Applies only in dropdown mode, not native) */
 .styled-select option {
   background-color: #ffffff;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   padding: 4px;
   font-size: 1.4rem;
 }
 
 .styled-select:focus {
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   outline: none;
 }
 
@@ -3341,7 +3355,7 @@ ul {
   border: 1px solid #ccc;
   border-radius: 7px;
   padding: 0.7rem;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   position: relative;
   cursor: pointer;
 }
@@ -3349,7 +3363,7 @@ ul {
 .rotated-icon {
   font-size: 20px;
   transform: rotate(-180deg) scaleX(-1);
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
 }
 
 .date-input {
@@ -3388,7 +3402,7 @@ ul {
 .page-limit-card span {
   font-weight: 500;
   font-size: 6rem;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
 }
 
 .quick-date-filters span {
@@ -3598,7 +3612,7 @@ ul {
 }
 
 .pageNumber__container {
-  border: 1px solid rgb(1, 36, 196);
+  border: 1px solid rgb(39, 1, 100);
   height: 2.8rem;
   display: flex;
   align-items: center;
@@ -3620,7 +3634,7 @@ ul {
 }
 
 .primary-color {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: #ffffff;
 }
 
@@ -3704,7 +3718,8 @@ ul {
 }
 
 @keyframes spinner-dot-animation {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -3801,7 +3816,7 @@ ul {
 }
 .side-nav .menu-list span:hover {
   color: #ffffff;
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   border-radius: 10px;
 }
 
@@ -3834,47 +3849,58 @@ ul {
   }
 }
 
-.long-table .table-head, .table .table-head {
+.long-table .table-head,
+.table .table-head {
   background-color: rgb(201, 212, 202);
   text-wrap: nowrap;
   font-size: 1.2rem;
   color: rgb(129, 129, 129);
 }
-.long-table .table-head th, .table .table-head th {
+.long-table .table-head th,
+.table .table-head th {
   padding: 0.5rem;
   width: 8rem;
   text-align: left;
   font-weight: 500;
 }
-.long-table .table-head .transaction-name-column, .table .table-head .transaction-name-column {
+.long-table .table-head .transaction-name-column,
+.table .table-head .transaction-name-column {
   width: 17% !important;
 }
-.long-table .table-head .date-name-column, .table .table-head .date-name-column {
+.long-table .table-head .date-name-column,
+.table .table-head .date-name-column {
   width: 10% !important;
 }
-.long-table .table-head .amount-name-column, .table .table-head .amount-name-column {
+.long-table .table-head .amount-name-column,
+.table .table-head .amount-name-column {
   width: 8% !important;
 }
-.long-table .table-head .remark-name-column, .table .table-head .remark-name-column {
+.long-table .table-head .remark-name-column,
+.table .table-head .remark-name-column {
   width: 17% !important;
 }
-.long-table .table-head .type-name-column, .table .table-head .type-name-column {
+.long-table .table-head .type-name-column,
+.table .table-head .type-name-column {
   width: 12% !important;
 }
-.long-table .table-head .branch-name-column, .table .table-head .branch-name-column {
+.long-table .table-head .branch-name-column,
+.table .table-head .branch-name-column {
   width: 15% !important;
 }
-.long-table .table-head .header-checkbox-cell, .table .table-head .header-checkbox-cell {
+.long-table .table-head .header-checkbox-cell,
+.table .table-head .header-checkbox-cell {
   text-align: center;
   vertical-align: middle;
   width: 6% !important;
 }
-.long-table .table-head .header-check, .table .table-head .header-check {
+.long-table .table-head .header-check,
+.table .table-head .header-check {
   text-align: center;
   transform: scale(1.2);
   vertical-align: middle;
 }
-.long-table .long-table-head, .table .long-table-head {
+.long-table .long-table-head,
+.table .long-table-head {
   background-color: rgb(201, 212, 202);
   text-wrap: nowrap;
   font-size: 1.2rem !important;
@@ -3883,102 +3909,124 @@ ul {
   transition: none;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table .long-table-head, .table .long-table-head {
+  .long-table .long-table-head,
+  .table .long-table-head {
     font-size: 10px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .long-table .long-table-head, .table .long-table-head {
+  .long-table .long-table-head,
+  .table .long-table-head {
     font-size: 10px;
   }
 }
-.long-table .long-table-head th, .table .long-table-head th {
+.long-table .long-table-head th,
+.table .long-table-head th {
   text-align: left;
   font-weight: 500 !important;
   transition: none;
 }
-.long-table .long-table-head .header-checkbox-cell, .table .long-table-head .header-checkbox-cell {
+.long-table .long-table-head .header-checkbox-cell,
+.table .long-table-head .header-checkbox-cell {
   text-align: center;
   vertical-align: middle;
   transition: none;
   animation: none;
 }
-.long-table .long-table-head .header-check, .table .long-table-head .header-check {
+.long-table .long-table-head .header-check,
+.table .long-table-head .header-check {
   text-align: center;
   vertical-align: middle;
 }
-.long-table tbody .table-items-container, .table tbody .table-items-container {
+.long-table tbody .table-items-container,
+.table tbody .table-items-container {
   background-color: #ffffff;
   border-bottom: 1px solid rgb(173, 167, 167);
   height: 5rem;
 }
-.long-table tbody .table-checkbox-cell, .table tbody .table-checkbox-cell {
+.long-table tbody .table-checkbox-cell,
+.table tbody .table-checkbox-cell {
   text-align: center;
   vertical-align: middle;
 }
-.long-table tbody .table-check, .table tbody .table-check {
+.long-table tbody .table-check,
+.table tbody .table-check {
   margin: 2.5rem 0;
 }
-.long-table tbody .table-no-check, .table tbody .table-no-check {
+.long-table tbody .table-no-check,
+.table tbody .table-no-check {
   padding-left: 1.5rem;
 }
-.long-table tbody .reminder-no-check, .table tbody .reminder-no-check {
+.long-table tbody .reminder-no-check,
+.table tbody .reminder-no-check {
   padding-left: 2.5rem;
 }
-.long-table tbody .row_line, .table tbody .row_line {
+.long-table tbody .row_line,
+.table tbody .row_line {
   margin-top: 1.2rem;
   margin-bottom: 1.2rem;
 }
-.long-table tbody .table-items, .table tbody .table-items {
+.long-table tbody .table-items,
+.table tbody .table-items {
   position: relative;
   overflow: visible;
 }
-.long-table tbody .table-items h4, .table tbody .table-items h4 {
+.long-table tbody .table-items h4,
+.table tbody .table-items h4 {
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 6rem;
 }
-.long-table tbody .table-items h5, .table tbody .table-items h5 {
+.long-table tbody .table-items h5,
+.table tbody .table-items h5 {
   font-weight: 500;
   font-size: 1.3rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table tbody .table-items h5, .table tbody .table-items h5 {
+  .long-table tbody .table-items h5,
+  .table tbody .table-items h5 {
     font-size: 1rem;
   }
 }
-.long-table tbody .table-items .sub-property, .table tbody .table-items .sub-property {
+.long-table tbody .table-items .sub-property,
+.table tbody .table-items .sub-property {
   display: block;
   text-wrap: nowrap;
   font-size: 1.2rem;
   color: rgb(129, 129, 129);
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table tbody .table-items .sub-property, .table tbody .table-items .sub-property {
+  .long-table tbody .table-items .sub-property,
+  .table tbody .table-items .sub-property {
     font-size: 1rem;
   }
 }
-.long-table tbody .long-table-items, .table tbody .long-table-items {
+.long-table tbody .long-table-items,
+.table tbody .long-table-items {
   text-align: left;
   height: 100%;
   vertical-align: middle;
 }
-.long-table tbody .long-table-items h4, .table tbody .long-table-items h4 {
+.long-table tbody .long-table-items h4,
+.table tbody .long-table-items h4 {
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 6rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table tbody .long-table-items h4, .table tbody .long-table-items h4 {
+  .long-table tbody .long-table-items h4,
+  .table tbody .long-table-items h4 {
     font-size: 11px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .long-table tbody .long-table-items h4, .table tbody .long-table-items h4 {
+  .long-table tbody .long-table-items h4,
+  .table tbody .long-table-items h4 {
     font-size: 11px;
   }
 }
-.long-table tbody .long-table-items h5, .table tbody .long-table-items h5 {
+.long-table tbody .long-table-items h5,
+.table tbody .long-table-items h5 {
   font-weight: 500;
   font-size: 1.3rem;
   display: inline-block;
@@ -3988,16 +4036,19 @@ ul {
   text-overflow: ellipsis;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table tbody .long-table-items h5, .table tbody .long-table-items h5 {
+  .long-table tbody .long-table-items h5,
+  .table tbody .long-table-items h5 {
     font-size: 11px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .long-table tbody .long-table-items h5, .table tbody .long-table-items h5 {
+  .long-table tbody .long-table-items h5,
+  .table tbody .long-table-items h5 {
     font-size: 11px;
   }
 }
-.long-table tbody .long-table-items .sub-property, .table tbody .long-table-items .sub-property {
+.long-table tbody .long-table-items .sub-property,
+.table tbody .long-table-items .sub-property {
   display: block;
   font-size: 1.2rem;
   color: rgb(129, 129, 129);
@@ -4008,19 +4059,23 @@ ul {
   text-overflow: ellipsis;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .long-table tbody .long-table-items .sub-property, .table tbody .long-table-items .sub-property {
+  .long-table tbody .long-table-items .sub-property,
+  .table tbody .long-table-items .sub-property {
     font-size: 11px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .long-table tbody .long-table-items .sub-property, .table tbody .long-table-items .sub-property {
+  .long-table tbody .long-table-items .sub-property,
+  .table tbody .long-table-items .sub-property {
     font-size: 11px;
   }
 }
-.long-table tbody .long-table-items .transaction-name, .table tbody .long-table-items .transaction-name {
+.long-table tbody .long-table-items .transaction-name,
+.table tbody .long-table-items .transaction-name {
   width: 80%;
 }
-.long-table tbody .no-data-4pack, .table tbody .no-data-4pack {
+.long-table tbody .no-data-4pack,
+.table tbody .no-data-4pack {
   text-align: center;
   padding: 1rem;
   font-size: 1.3rem;
@@ -4104,9 +4159,9 @@ ul {
   letter-spacing: 0.5px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  border-color: rgb(1, 36, 196);
+  border-color: rgb(39, 1, 100);
   font-weight: 720;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
   border-width: 1px;
   display: flex;
   align-items: center;
@@ -4114,7 +4169,8 @@ ul {
 .pagination .button:hover {
   background-color: #f0f0f0;
 }
-.pagination .button.disabled, .pagination .button:disabled {
+.pagination .button.disabled,
+.pagination .button:disabled {
   background-color: rgb(204, 204, 204);
   color: #ffffff;
   cursor: not-allowed;
@@ -4136,7 +4192,7 @@ ul {
   border-radius: 7px;
   color: #333;
   align-items: center;
-  border: 1px solid rgb(1, 36, 196);
+  border: 1px solid rgb(39, 1, 100);
 }
 .pagination .page-numbers li {
   display: flex;
@@ -4147,7 +4203,7 @@ ul {
   height: 100%;
 }
 .pagination .page-numbers .current {
-  background-color: rgb(1, 36, 196);
+  background-color: rgb(39, 1, 100);
   color: #ffffff;
   width: 4rem;
   border-radius: 7px;
@@ -4159,7 +4215,11 @@ ul {
 /* General DayPicker Styling */
 .my-daypicker .rdp {
   font-family: "Arial", sans-serif; /* Change font to give it a premium look */
-  background: linear-gradient(145deg, #e2e8f0, #f9fafb); /* Background gradient */
+  background: linear-gradient(
+    145deg,
+    #e2e8f0,
+    #f9fafb
+  ); /* Background gradient */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the calendar */
   border-radius: 12px;
   padding: 16px;
@@ -4424,7 +4484,7 @@ ul {
 }
 
 .edit-icon {
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
 }
 
 .delete-icon {
@@ -4803,10 +4863,10 @@ ul {
 }
 
 .header-catagory-selectors select {
-  border: 1px solid rgb(1, 36, 196);
+  border: 1px solid rgb(39, 1, 100);
   font-size: 1.4rem;
   font-weight: 500;
-  color: rgb(1, 36, 196);
+  color: rgb(39, 1, 100);
 }
 
 .header-catagory-selectors .styled-select {

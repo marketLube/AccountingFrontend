@@ -86,8 +86,8 @@ const RemindersForm = () => {
     try {
       await edit_reminder(values?._id, formData);
       dispatch(resetReminders());
-      reset();
-      toast.success("New reminder added✅", {
+
+      toast.success("Updated reminder✅", {
         duration: 3000,
         position: "top-center",
         style: {
@@ -178,6 +178,7 @@ const RemindersForm = () => {
               <input
                 type="number"
                 id="amount"
+                step="any"
                 {...register("amount", {
                   required: "Amount is required",
                   min: { value: 0, message: "Amount must be positive" },

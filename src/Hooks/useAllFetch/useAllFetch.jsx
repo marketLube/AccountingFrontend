@@ -11,7 +11,6 @@ import { useReminders } from "../useReminders";
 import { useBalanceSheet } from "../balanceSheetHook/useBalanceSheet";
 import { useBranchWise } from "../useBranchWise/useBranchwise";
 import { useBudgetPlanner } from "../useBudgetPlanner/useBudgetPlanner";
-import { useUniversity } from "../universityHook/useUniversity";
 
 export const useAllFetch = () => {
   const dispatch = useDispatch();
@@ -29,7 +28,6 @@ export const useAllFetch = () => {
   useBalanceSheet();
   useBranchWise();
   useBudgetPlanner();
-  useUniversity();
 
   useEffect(() => {
     if (dashboardStat !== "Success") {

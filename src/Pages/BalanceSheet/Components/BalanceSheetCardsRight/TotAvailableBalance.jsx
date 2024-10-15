@@ -14,11 +14,18 @@ const TotAvailableBalance = () => {
     }
   }, [dispatch, banks.length]);
 
-  const rbiBalance = banks.find((bank) => bank.name === "RBL")?.balance;
-  const iciciBalance = banks.find((bank) => bank.name === "ICICI")?.balance;
-  const rakBalance = banks.find((bank) => bank.name === "RAK")?.balance;
-  const hdfcBalance = banks.find((bank) => bank.name === "HDFC")?.balance;
-  const cashBalance = banks.find((bank) => bank.name === "CASH")?.balance;
+  const fidalBalance = banks.find((bank) => bank.name === "Fidal")?.balance;
+  const althameemBalance = banks.find(
+    (bank) => bank.name === "Althameem"
+  )?.balance;
+  const axisBalance = banks.find((bank) => bank.name === "Axis")?.balance;
+  const cashBalance = banks.find((bank) => bank.name === "Cash")?.balance;
+
+  const webLubeBalance = banks.find(
+    (bank) => bank.name === "Web Lube"
+  )?.balance;
+
+  const othersBalance = banks.find((bank) => bank.name === "Others")?.balance;
 
   return (
     <div
@@ -50,32 +57,43 @@ const TotAvailableBalance = () => {
       ) : (
         <>
           <div className="balance-item">
-            <div className="balance-name balance-name-rbl">RBI</div>
-            <div className="balance-amount">{formatCurrency(rbiBalance)}</div>
+            <div className="balance-name balance-name-rbl">Web Lube</div>
+            <div className="balance-amount">
+              {formatCurrency(webLubeBalance)}
+            </div>
           </div>
           <div className="underline-balance"></div>
 
           <div className="balance-item">
-            <div className="balance-name balance-name-icici">ICICI</div>
-            <div className="balance-amount">{formatCurrency(iciciBalance)}</div>
+            <div className="balance-name balance-name-icici">Fidal</div>
+            <div className="balance-amount">{formatCurrency(fidalBalance)}</div>
           </div>
           <div className="underline-balance"></div>
 
           <div className="balance-item">
-            <div className="balance-name balance-name-rak">RAK</div>
-            <div className="balance-amount">{formatCurrency(rakBalance)}</div>
+            <div className="balance-name balance-name-rak">Althameem</div>
+            <div className="balance-amount">
+              {formatCurrency(althameemBalance)}
+            </div>
           </div>
           <div className="underline-balance"></div>
 
           <div className="balance-item">
-            <div className="balance-name balance-name-hdfc">HDFC</div>
-            <div className="balance-amount">{formatCurrency(hdfcBalance)}</div>
+            <div className="balance-name balance-name-hdfc">Axis</div>
+            <div className="balance-amount">{formatCurrency(axisBalance)}</div>
           </div>
           <div className="underline-balance"></div>
 
           <div className="balance-item">
             <div className="balance-name balance-name-cash">Cash</div>
             <div className="balance-amount">{formatCurrency(cashBalance)}</div>
+          </div>
+          <div className="underline-balance"></div>
+          <div className="balance-item">
+            <div className="balance-name balance-name-bandan">Others</div>
+            <div className="balance-amount">
+              {formatCurrency(othersBalance)}
+            </div>
           </div>
           <div className="underline-balance"></div>
         </>

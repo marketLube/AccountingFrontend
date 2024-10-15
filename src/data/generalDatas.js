@@ -1,13 +1,4 @@
-export const branches = [
-  "All Branch",
-  "Kozhikode",
-  "Kochi",
-  "Kottayam",
-  "Manjeri",
-  "Kannur",
-  "Directors",
-  "Corporate",
-];
+export const branches = ["All Branch", "Market Lube", "Web Lube", "Hiline"];
 
 export const dateOptions = [
   "All",
@@ -16,12 +7,11 @@ export const dateOptions = [
   "Last 30 Days",
   "Last 60 Days",
 ];
-
-export const univStatus = [
-  "Invoice Shared",
-  "Mail Pending",
-  "Pending",
-  "Received",
+export const bank = [
+  "Fidal",
+  "Althameem",
+  "Axis",
+  "CASH",
+  "Others",
+  "Web Lube",
 ];
-
-export const currencies = ["USD", "Pound", "CAD", "Euro"];

@@ -1,30 +1,38 @@
-function Percentage({ children, size = "1rem" }) {
-  const content = children.split("/");
-  const percent = content[0];
-  const text = content[1];
-  const isPositive = !percent.startsWith("-");
+import { useEffect, useRef } from "react";
 
+function Percentage({ children, size = "1rem", percent = false }) {
+  const type = useRef(Number(children) < 0 ? "neg" : "pos");
+
+  useEffect(() => {
+    if (Number(children) < 0) type.current = "neg";
+    else type.current = "pos";
+  }, [children]);
+
+  const symbol = type === "neg" ? "-" : "";
+  const paddingSize = parseFloat(size);
+
+  const display = percent ? `${children}%` : `${symbol}₹ ${Math.abs(children)}`;
+  const tail = percent ? "than last month" : "Profit";
   return (
     <div>
       <span
         style={{
-          color: isPositive ? "green" : "red",
-          fontSize: size,
+          color: type.current === "pos" ? "green" : "red",
           fontWeight: "100",
-          fontFamily: "inter",
+          fontFamily: "Inter",
         }}
       >
-        {percent}
+        {display}
       </span>
       <span
         style={{
           color: "black",
           fontSize: size,
           fontWeight: "100",
-          paddingLeft: parseInt(size) / 2 + "rem",
+          paddingLeft: paddingSize / 2 + "rem",
         }}
       >
-        {text}
+        {tail}
       </span>
     </div>
   );

@@ -48,9 +48,10 @@ function CurrentBalance() {
             <span className="balance-card__amount">
               {formatCurrency(totalBalance)}
             </span>
-            <ArrowUpBtn size="60px" arroSize="40px" />
           </div>
-          <Percentage size="1.5rem">{`${percentageHike}%/than last month`}</Percentage>
+          <Percentage type={"pos"} size="1.5rem" percent={true}>
+            {percentageHike}
+          </Percentage>
         </>
       )}
       {error && <div className="error">{error}</div>}

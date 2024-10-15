@@ -14,6 +14,7 @@ export const fetchBranchWise = createAsyncThunk(
       const response = await axios.get(`${URL}${endpoint}`, {
         withCredentials: true,
       });
+
       return response.data.docs;
     } catch (error) {
       return rejectWithValue(
@@ -109,7 +110,7 @@ const initialState = {
   dateOptions,
   branchWiseStartDate: formatDate(new Date(new Date().getFullYear(), 0, 1)),
   branchWiseEndDate: today(),
-  curBranch: "Kozhikode",
+  curBranch: "Market Lube",
   branches,
   temp: 1,
 
@@ -168,25 +169,30 @@ const branchwiseSlice = createSlice({
       state.branchData = action.payload;
     },
     setBranchCurrentPage(state, action) {
-      if (state.currentPage < action.payload) {
-        if ((action.payload - 1) % 4 === 0) {
+      const newPage = action.payload; // The page number user clicked
+
+      // Handling forward page navigation
+      if (state.currentPage < newPage) {
+        if ((newPage - 1) % 4 === 0) {
           state.page += 1;
-          state.startPage = 0;
           state.temp = 1;
         } else {
-          state.temp += 1;
+          state.temp = ((newPage - 1) % 4) + 1;
         }
       }
-      if (state.currentPage > action.payload) {
-        if (action.payload % 4 === 0) {
+
+      // Handling backward page navigation
+      if (state.currentPage > newPage) {
+        if (newPage % 4 === 0) {
           state.page -= 1;
-          state.startPage = 0;
           state.temp = 4;
         } else {
-          state.temp -= 1;
+          state.temp = newPage % 4;
         }
       }
-      state.currentPage = action.payload;
+
+      // Update currentPage and calculate startPage
+      state.currentPage = newPage;
       state.startPage = 6 * (state.temp - 1);
     },
     setBranchWiseSelectedDate(state, action) {

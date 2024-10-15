@@ -6,7 +6,7 @@ import User from "./User";
 function SideBar() {
   return (
     <div className="sideBar">
-      <Logo />
+      {/* <Logo /> */}
       <nav className="sideBar__nav">
         <SideBarContents />
       </nav>

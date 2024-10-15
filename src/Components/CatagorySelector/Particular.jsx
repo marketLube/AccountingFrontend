@@ -21,7 +21,7 @@ function Particular({
   const [stopDropdown, setStopDropdown] = useState(false);
   const [isCurEdit, setIsCurEdit] = useState(false);
   const [curEditValue, setCurEditValue] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,6 +51,7 @@ function Particular({
 
   const handleCurValue = (val) => {
     return () => {
+      setIsCurEdit(false);
       setCurValue(val);
     };
   };
@@ -68,6 +69,7 @@ function Particular({
   const handleAddParticular = (e) => {
     e.stopPropagation();
     setIsCurEdit(true);
+    setCurEditValue("");
     setStopDropdown(false);
     setIsCat(true);
   };
@@ -98,7 +100,6 @@ function Particular({
       const message = err.response.data.message || "Network Error";
       toast.error(message);
       setIsCurEdit(true);
-      console.error(err);
     } finally {
       setIsLoading(false); // Stop loading
     }
@@ -153,7 +154,7 @@ function Particular({
                 onClick={handleSaveParticular}
                 fontSize="medium"
                 className="show-cat-save-icon"
-                disabled={isLoading} // Disable Check button while loading
+                disabled={isLoading}
               />
             )}
             <Close
@@ -165,7 +166,7 @@ function Particular({
                 strokeWidth: "4",
               }}
               onClick={handleDiscard}
-              disabled={isLoading} // Disable Close button while loading
+              disabled={isLoading}
             />
           </div>
         )}

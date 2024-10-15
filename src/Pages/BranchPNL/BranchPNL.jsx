@@ -140,7 +140,7 @@ function BranchPNL() {
               ) : (
                 <>
                   <span className="graph-head">Monthly PNL of {curBranch}</span>
-                  <MonthlyPNLChart labels={labels} datasets={datasets} />;
+                  <MonthlyPNLChart labels={labels} datasets={datasets} />
                 </>
               )}
               {chartError && (
