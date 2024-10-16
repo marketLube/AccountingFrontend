@@ -46,7 +46,7 @@ function BranchDetails({ title }) {
           <React.Fragment>
             <div className="balance_card">
               <div className={`balance-name balance-name-icici`}>Fidal</div>
-              <div className="balance-amount">{data?.Fidhal?.toFixed(2)}</div>
+              <div className="balance-amount">{data?.Fidal?.toFixed(2)}</div>
             </div>
             <div className="underline-balance"></div>
           </React.Fragment>
@@ -68,7 +68,7 @@ function BranchDetails({ title }) {
           </React.Fragment>
           <React.Fragment>
             <div className="balance_card">
-              <div className={`balance-name balance-name-cash`}>Cash</div>
+              <div className={`balance-name balance-name-cash`}>CASH</div>
               <div className="balance-amount">{data?.CASH?.toFixed(2)}</div>
             </div>
             <div className="underline-balance"></div>

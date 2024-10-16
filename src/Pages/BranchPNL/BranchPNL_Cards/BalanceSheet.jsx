@@ -10,7 +10,7 @@ const BalanceSheet = ({ title, balances }) => {
     Fidal: "balance-name-icici",
     Althameem: "balance-name-rak",
     Axis: "balance-name-hdfc",
-    Cash: "balance-name-cash",
+    CASH: "balance-name-cash",
     Others: "balance-name-bandan",
   };
 
