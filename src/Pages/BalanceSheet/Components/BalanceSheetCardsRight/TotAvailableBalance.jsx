@@ -19,7 +19,7 @@ const TotAvailableBalance = () => {
     (bank) => bank.name === "Althameem"
   )?.balance;
   const axisBalance = banks.find((bank) => bank.name === "Axis")?.balance;
-  const cashBalance = banks.find((bank) => bank.name === "Cash")?.balance;
+  const cashBalance = banks.find((bank) => bank.name === "CASH")?.balance;
 
   const webLubeBalance = banks.find(
     (bank) => bank.name === "Web Lube"
