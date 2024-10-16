@@ -13,7 +13,7 @@ import {
 } from "../../../Services/dateFormatter";
 import { getInitialTime } from "../../../Components/Coundown/countdownActions";
 import { setTime } from "../../../Global-Variables/features/auth/authSlice";
-import { bank } from "../../../data/generalDatas";
+import { bank, branches } from "../../../data/generalDatas";
 
 const RemindersForm = () => {
   const [loading, setLoading] = useState(false);
@@ -181,7 +181,7 @@ const RemindersForm = () => {
                 {...register("branch", { required: "Select a branch" })}
               >
                 <option value="">Select branch</option>
-                {bank.map((val) => (
+                {branches.slice(1).map((val) => (
                   <option key={val} value={val}>
                     {val}
                   </option>
