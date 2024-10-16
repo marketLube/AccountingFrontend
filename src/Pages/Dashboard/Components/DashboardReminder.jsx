@@ -8,6 +8,7 @@ import { fetchReminders } from "../../../Global-Variables/features/remindersSlic
 import { NavLink } from "react-router-dom";
 import { truncateText } from "../../../Services/truncateFormatter";
 import { RemiderIcon } from "../../../Utils/icons/HomeIcon";
+import dateFormatter from "../../../Services/dateFormatter";
 
 function DashboardReminder() {
   const [open, setOpen] = useState(false);
@@ -34,13 +35,6 @@ function DashboardReminder() {
       dispatch(fetchReminders("/v1/reminders"));
     }
   }, [dispatch, reminders.length]);
-
-  const dateFormatter = (dateStr) => {
-    const date = new Date(dateStr);
-    const formattedDate = date.toLocaleDateString();
-    const time = date.toLocaleTimeString();
-    return [formattedDate, time];
-  };
 
   return (
     <div className="dashboard__reminder">

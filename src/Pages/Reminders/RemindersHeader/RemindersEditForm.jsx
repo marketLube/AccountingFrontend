@@ -8,6 +8,7 @@ import Catagory from "../../../Components/CatagorySelector/Catagory";
 import { resetReminders } from "../../../Global-Variables/features/remindersSlice/remindersSlice.";
 import particularFinder from "../../../Services/helperFunctions";
 import { addCurrentTimeToDate } from "../../../Services/dateFormatter";
+import { branches } from "../../../data/generalDatas";
 
 const RemindersForm = () => {
   const dispatch = useDispatch();
@@ -211,13 +212,11 @@ const RemindersForm = () => {
                 {...register("branch", { required: "Select a branch" })}
               >
                 <option value="">Select branch</option>
-                <option value="Kochi">Kochi</option>
-                <option value="Kozhikode">Kozhikode</option>
-                <option value="Kottayam">Kottayam</option>
-                <option value="Manjeri">Manjeri</option>
-                <option value="Kannur">Kannur</option>
-                <option value="Corporate">Corporate</option>
-                <option value="Directors">Directors</option>
+                {branches.slice(1).map((val) => (
+                  <option key={val} value={val}>
+                    {val}
+                  </option>
+                ))}
               </select>
               {errors.branch && (
                 <span className="form-group-error">
