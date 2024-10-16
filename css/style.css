@@ -931,7 +931,8 @@ ul {
 .daybook-form .form-section .form-row .form-group .branch-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
 }
 .daybook-form .form-section .form-row .form-group .type-options {
   display: flex;
