@@ -7,7 +7,6 @@ function BranchDetails({ title }) {
     (state) => state.branchwise
   );
   const [data] = branchData;
-
   if (!data) return null;
 
   return (

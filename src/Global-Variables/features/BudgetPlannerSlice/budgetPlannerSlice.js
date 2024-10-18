@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { branches } from "../../../data/generalDatas";
 
 const URL = import.meta.env.VITE_URL;
 
@@ -18,16 +19,7 @@ export const getCalcBudget = createAsyncThunk(
 
 const initialState = {
   curSelectedBranch: "All Branch",
-  allBranch: [
-    "All Branch",
-    "Kozhikode",
-    "Kannur",
-    "Kottayam",
-    "Kochi",
-    "Manjeri",
-    "Corporate",
-    "Directors",
-  ],
+  allBranch: branches,
   loading: false,
   error: null,
   data: [],
