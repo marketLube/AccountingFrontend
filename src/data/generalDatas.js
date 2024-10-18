@@ -1,10 +1,4 @@
-export const branches = [
-  "All Branch",
-  "Market Lube",
-  "Web Lube",
-  "Hiline",
-  "Mallu Flicks",
-];
+export const branches = ["All Branch", "Market Lube", "Web Lube"];
 
 export const dateOptions = [
   "All",
